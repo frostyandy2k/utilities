@@ -1,0 +1,10 @@
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+set backspace=indent,eol,start
+set autowrite
+colorscheme monokai-phoenix
+execute pathogen#infect()
+filetype plugin indent on
+au BufRead,BufNewFile *.ts setlocal filetype=javascript
+syntax on
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab

@@ -1,7 +1,9 @@
 # ------------------------------------
 # Docker alias and function
 # ------------------------------------
-
+# Enable this if you want sudo access
+# alias docker="sudo docker"
+# alias docker-compose" sudo docker compose"
 
 # Use Docker Machine
 alias dm="docker-machine"

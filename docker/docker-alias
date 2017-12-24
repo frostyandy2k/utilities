@@ -3,7 +3,7 @@
 # ------------------------------------
 # Enable this if you want sudo access
 # alias docker="sudo docker"
-# alias docker-compose" sudo docker compose"
+# alias docker-compose="sudo docker-compose"
 
 # Use Docker Machine
 alias dm="docker-machine"
@@ -55,6 +55,9 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 # View dangling volumes
 alias dvol='docker volume ls -qf dangling=true'
+
+# View logs
+alias dlog="docker logs"
 
 # Remove dangling volumes 
 alias dvolrm='docker volume rm $(docker volume ls -qf dangling=true)'

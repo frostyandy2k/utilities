@@ -42,19 +42,6 @@ POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
-alias ll="ls -lah"
-alias cd..="cd .."
-alias insta="cd ~/instaguide/"
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-alias gs="git status"
-alias gc="git commit -m"
-alias gp="git fetch && git pull"
-alias glog="git log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glogp="glog -p"
-alias ga="git branch -a"
-#alias subl='touch "$1" ; open -a "Sublime Text" "$1"'
-function subl() { open -a "Sublime Text" "$1" || touch "$1" && open -a "Sublime Text" "$1"; }
-
 export HOST=$(ifconfig en0 | grep 'inet ' | cut -f2 | awk '{print($2)}')
 echo "HOST set to $HOST"
 
@@ -68,9 +55,15 @@ stty -ixon
 
 echo "Ready, welcome Andrei"
 
+# include shortcut file
+if [ -f $HOME/.my-alias ]; then
+    . $HOME/.my-alias
+fi
+
+
 # include docker alias file if it exists
-if [ -f $HOME/personal/github_myrepos/docker-alias/zshrc ]; then
-    . $HOME/personal/github_myrepos/docker-alias/zshrc
+if [ -f $HOME/.docker-alias ]; then
+    . $HOME/.docker-alias
 fi
 
 ##

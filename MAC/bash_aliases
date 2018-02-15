@@ -6,6 +6,6 @@ alias gc="git commit -m"
 alias gp="git fetch && git pull"
 alias glog="git log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glogp="glog -p"
-alias ga="git branch -a"
+alias ga="git branch -av"
 #alias subl='touch "$1" ; open -a "Sublime Text" "$1"'
 function subl() { open -a "Sublime Text" "$1" || touch "$1" && open -a "Sublime Text" "$1"; }

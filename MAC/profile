@@ -56,8 +56,8 @@ stty -ixon
 echo "Ready, welcome Andrei"
 
 # include shortcut file
-if [ -f $HOME/.bash-aliases ]; then
-    . $HOME/.bash-aliases
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
 fi
 
 

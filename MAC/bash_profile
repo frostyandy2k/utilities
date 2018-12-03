@@ -1,6 +1,10 @@
 # MacPorts Installer addition on 2014-05-05_at_23:51:02: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
+# Node v8 path fix for homebrew
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 # Open a new tab in the current working directory
 function tab() {

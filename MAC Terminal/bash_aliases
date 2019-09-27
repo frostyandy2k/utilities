@@ -1,3 +1,4 @@
+alias watch="watch "
 alias ll="ls -lah"
 alias cd..="cd .."
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"

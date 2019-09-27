@@ -44,7 +44,7 @@ export LANG=en_US.UTF-8
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
 export HOST=$(ifconfig en0 | grep 'inet ' | cut -f2 | awk '{print($2)}')
 echo "HOST set to $HOST"
@@ -56,6 +56,11 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 # disable XOF (so i-search ctrl+s works)
 stty -ixon
+
+#### NVM Setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 echo "Ready, welcome Andrei"
 

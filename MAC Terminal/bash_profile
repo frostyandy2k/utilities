@@ -6,6 +6,8 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/node@8/bin:$PATH"
 
+export COMPOSE_DOCKER_CLI_BUILD=1
+
 # Open a new tab in the current working directory
 function tab() {
   osascript 2>/dev/null <<EOF
@@ -19,9 +21,12 @@ function tab() {
 EOF
 }
 
+source ./.companyhelpers
+
 # Make history larger and available in all sessions
-HISTSIZE=9000
+HISTSIZE=100000000
 HISTFILESIZE=$HISTSIZE
+SHELL_SESSION_HISTORY=0
 HISTCONTROL=ignorespace:ignoredups
 
 history() {

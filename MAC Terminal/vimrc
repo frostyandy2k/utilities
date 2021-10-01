@@ -7,8 +7,32 @@ set t_Co=256
 set backspace=indent,eol,start
 set autowrite
 "colorscheme monokai-phoenix
-"execute pathogen#infect()
+execute pathogen#infect()
 filetype plugin indent on
 au BufRead,BufNewFile *.ts setlocal filetype=javascript
 syntax on
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+
+
+call plug#begin('~/.vim/plugged')
+" If installed using Homebrew
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+set rtp+=/usr/local/opt/fzf
+
+let g:ackprg = 'ag --vimgrep'
+
+" This is the default option:
+"   - Preview window on the right with 50% width
+"   - CTRL-/ will toggle preview window.
+" - Note that this array is passed as arguments to fzf#vim#with_preview function.
+" - To learn more about preview window options, see `--preview-window` section of `man fzf`.
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
